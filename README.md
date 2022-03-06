@@ -2,11 +2,11 @@
 How to use Docker run php and mysql
 
 # Reference
-## imgproxy
+- imgproxy
 https://hub.docker.com/r/darthsim/imgproxy
 
-## adminer
+- adminer
 https://hub.docker.com/_/adminer
 
-## docker-apache-php
+- docker-apache-php
 https://github.com/yappabe/docker-apache-php
