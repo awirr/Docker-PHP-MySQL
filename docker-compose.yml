@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  app:
+    image: yappabe/apache-php:5.6
+    container_name: name_app_web
+    ports:
+      - "8000:80"
+    volumes:
+      - ./app:/var/www/app/web
+    environment:
+      DOCUMENT_ROOT: /var/www/app/web
+      ENVIRONMENT: dev
+    links:
+      - db
+  db:
+    image: mysql:5.7
+    container_name: database
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_name
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: db_password
+    ports:
+      - "3307:3306"
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - 8080:8080
